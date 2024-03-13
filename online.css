@@ -1,0 +1,372 @@
+*{
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+  }
+
+  /* correct search */
+  .search-form {
+    margin-top: 20px; 
+    display: flex;
+    padding: 1%;
+    max-width: 100%;
+  }
+  
+  .search-form input {
+    padding: 10px;
+    border: 1px solid #11181F;
+    border-radius: 4px;
+    flex: 1;
+  }
+  
+  .search-form button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  .search-form button:hover {
+    background-color: aqua;
+  }
+  /* end*/
+
+  /* Container for the dynamically generated cards */
+  
+  #jobCardsContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 3%;
+    max-width: 100%
+  }
+  
+  
+  .cards {
+    margin-top: 20px;
+    background-color: #11181F;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    color: white;
+  }
+  
+  .container {
+    padding: 20px;
+  }
+  
+  .icons ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .icons li {
+    display: inline-block;
+    margin-right: 15px;
+  }
+  
+  .icons a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  .description {
+    margin-bottom: 20px;
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .buttons button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .buttons button:hover {
+    background-color: aqua;
+  }
+  /* CSS for selective styling */
+.cards h1,
+.cards h2,
+.cards .parameter-label {
+    color: #007bff; 
+}
+
+.cards p,
+.cards .description {
+    color: white; /* White color for actual information and job description */
+}
+
+  /* the end */
+  
+/* video */
+#background-video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+/* jobs- responsives css */
+
+header, main {
+    position: relative;
+    z-index: 1; /* Ensure content appears above the video */
+    overflow-y: auto;
+}
+header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+h1 {
+    font-size: 1.5em;
+}
+
+#sidebarToggle {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    position: absolute; /* Add this line */
+    top: 10px; /* Adjust the top position as needed */
+    left: 10px; /* Adjust the left position as needed */
+}
+
+form {
+    display: flex;
+    align-items: center;
+}
+
+.form-input {
+    display: flex;
+    margin-right: 20px;
+}
+
+input[type="search"] {
+    background-color: #007bff;
+    max-width: 100%; /* Allow the input to take up to 100% of the width */
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    max-width: 90%; /* Set a maximum width for the input */
+    box-sizing: border-box; /* Include padding and border in the width calculation */
+    pointer-events: none; 
+}
+
+.search-btn {
+    width: 30%; /* Set a default width for the button */
+    max-width: 100%; /* Allow the button to take up to 100% of the width */
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px;
+    cursor: pointer;
+    max-width: 10%; /* Set a maximum width for the button */
+    box-sizing: border-box; /* Include padding and border in the width calculation */
+}
+
+.search-btn i {
+    font-size: 1.2em;
+}
+@media screen and (max-width: 271px) {
+    input[type="search"], .search-btn {
+        max-width: 100%; /* Adjust the maximum width for smaller screens */
+    }
+}
+
+main {
+    position: relative;
+    z-index: 1; /* Ensure content appears above the video */
+    overflow-y: auto; /* Allow vertical scrolling */
+    padding: 60px 20px; /* Adjust padding to prevent content from being hidden behind header */
+}
+/* jobs.css nav bar*/
+
+#wrapper {
+    display: flex;
+}
+
+#navbar {
+    display: block;
+    background-color: #11181F;
+    color: #007bff;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.1s ease-in-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+#navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    margin: 0; /* Remove default margin to prevent spacing issues */
+    padding: 0; /* Remove default padding */
+}
+
+#navbar a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: color 0.3s ease-in-out;
+}
+
+#navbar a:hover {
+    color: white; /* Change color on hover */
+}
+@media screen and (max-width: 319px) {
+    #navbar ul {
+        flex-direction: column; /* Change layout to vertical stacking */
+        align-items: center; /* Center items horizontally */
+    }
+}
+
+#content {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 20px; /* Adjust padding as needed */
+    box-sizing: border-box;
+}
+/* Existing styles remain unchanged */
+
+#mainHeader {
+    /* Other styles */
+    display: flex;
+    flex-direction: column; /* Change the direction to column */
+    align-items: center; /* Center items horizontally */
+}
+
+#sidebarToggle, h1 {
+    margin-bottom: 10px; /* Add some spacing between the toggle button and the heading */
+}
+
+form {
+    margin-top: 10px; /* Add some spacing between the heading and the form */
+}
+
+
+@media screen and (min-width: 553px) {
+    #mainHeader {
+        flex-direction: row; /* Switch back to row layout for wider screens */
+        justify-content: space-between; /* Align items horizontally with space in between */
+        align-items: flex-start; /* Align items at the top */
+    }
+
+    form {
+        margin-top: 0; /* Reset the top margin for the form */
+    }
+}
+
+@media screen and (max-width: 320px) {
+    #mainHeader {
+        justify-content: center; /* Center items vertically */
+    }
+
+    #sidebarToggle {
+        position: static; /* Reset the position to static for stacking vertically */
+        margin-bottom: 10px; /* Add some spacing between the toggle button and the heading */
+    }
+
+    h1 {
+        margin-bottom: 10px; /* Add some spacing between the heading and the form */
+    }
+
+    form {
+        margin-top: 10px; /* Add some spacing between the heading and the form */
+    }
+}
+
+
+
+/*************************************************************************/
+/* **********jobs.html - the chatbot excuse page *****************/
+
+.chatbotcard {
+  background-color: #11181F;
+  border-radius: 1%;
+  padding: 5%;
+  margin-top: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
+  color: white;
+  text-align: center;
+}
+
+.chatbotcard pre {
+  margin-bottom: 20px; /* Add some space below the <pre> element */
+  white-space: pre-wrap; /* Allow preformatted text to wrap */
+  word-wrap: break-word; /* Allow long words to break and wrap onto the next line */
+  margin-bottom: 20px; /* Add some space below the <pre> element */
+}
+.chatbotcard p span {
+  color: #007bff; /* Change the color of the span elements */
+}
+
+
+.chatbotcard button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.chatbotcard button:hover {
+  background-color: aqua;
+}
+
+/*************************************************************************/
+/* **********donte.html -- the donation page *****************/
+
+
+/*************************************************************************/
+/* **********index.html -- the home page *****************/
+
+.highlight {
+  color: #007bff; /* Set the color to blue */
+}
+
+
+
+/*************************************************************************/
+/* **********about.html -- the about page *****************/
+
