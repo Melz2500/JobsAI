@@ -1,0 +1,349 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* through out */
+header {
+    position: relative;
+    z-index: 1; /* Ensure content appears above the video */
+    overflow-y: auto;
+}
+header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+h1 {
+    font-size: 1.5em;
+}
+
+#sidebarToggle {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    position: absolute; /* Add this line */
+    top: 10px; /* Adjust the top position as needed */
+    left: 10px; /* Adjust the left position as needed */
+}
+
+form {
+    display: flex;
+    align-items: center;
+}
+
+.form-input {
+    display: flex;
+    margin-right: 20px;
+}
+
+input[type="search"] {
+    background-color: #007bff;
+    max-width: 100%; /* Allow the input to take up to 100% of the width */
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    max-width: 90%; /* Set a maximum width for the input */
+    box-sizing: border-box; /* Include padding and border in the width calculation */
+    pointer-events: none; 
+}
+
+.search-btn {
+    width: 30%; /* Set a default width for the button */
+    max-width: 100%; /* Allow the button to take up to 100% of the width */
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px;
+    cursor: pointer;
+    max-width: 10%; /* Set a maximum width for the button */
+    box-sizing: border-box; /* Include padding and border in the width calculation */
+}
+
+.search-btn i {
+    font-size: 1.2em;
+}
+@media screen and (max-width: 271px) {
+    input[type="search"], .search-btn {
+        max-width: 100%; /* Adjust the maximum width for smaller screens */
+    }
+}
+
+main {
+    position: relative;
+    z-index: 1; /* Ensure content appears above the video */
+    overflow-y: auto; /* Allow vertical scrolling */
+    padding: 60px 20px; /* Adjust padding to prevent content from being hidden behind header */
+}
+/* jobs.css nav bar*/
+
+#wrapper {
+    display: flex;
+}
+
+#navbar {
+    display: block;
+    background-color: #11181F;
+    color: #007bff;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.1s ease-in-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+#navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    margin: 0; /* Remove default margin to prevent spacing issues */
+    padding: 0; /* Remove default padding */
+}
+
+#navbar a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: color 0.3s ease-in-out;
+}
+
+#navbar a:hover {
+    color: white; /* Change color on hover */
+}
+@media screen and (max-width: 319px) {
+    #navbar ul {
+        flex-direction: column; /* Change layout to vertical stacking */
+        align-items: center; /* Center items horizontally */
+    }
+}
+
+#content {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 20px; /* Adjust padding as needed */
+    box-sizing: border-box;
+}
+/* Existing styles remain unchanged */
+
+#mainHeader {
+    /* Other styles */
+    display: flex;
+    flex-direction: column; /* Change the direction to column */
+    align-items: center; /* Center items horizontally */
+}
+
+#sidebarToggle, h1 {
+    margin-bottom: 10px; /* Add some spacing between the toggle button and the heading */
+}
+
+form {
+    margin-top: 10px; /* Add some spacing between the heading and the form */
+}
+
+
+@media screen and (min-width: 553px) {
+    #mainHeader {
+        flex-direction: row; /* Switch back to row layout for wider screens */
+        justify-content: space-between; /* Align items horizontally with space in between */
+        align-items: flex-start; /* Align items at the top */
+    }
+
+    form {
+        margin-top: 0; /* Reset the top margin for the form */
+    }
+}
+
+@media screen and (max-width: 320px) {
+    #mainHeader {
+        justify-content: center; /* Center items vertically */
+    }
+
+    #sidebarToggle {
+        position: static; /* Reset the position to static for stacking vertically */
+        margin-bottom: 10px; /* Add some spacing between the toggle button and the heading */
+    }
+
+    h1 {
+        margin-bottom: 10px; /* Add some spacing between the heading and the form */
+    }
+
+    form {
+        margin-top: 10px; /* Add some spacing between the heading and the form */
+    }
+}
+
+
+/* throughout the end*/
+
+
+main {
+    padding: 10%;
+}
+
+#background-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    z-index: -1;
+}
+
+#setup-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.setup-inner {
+    margin-bottom: 20px;
+}
+
+#setup-textarea {
+    background-color: white;
+    border: 3px solid #11181F;
+    border-radius: 5%;
+    width: 90%;
+    height: 50px;
+    padding: 10px;
+    margin-bottom: 10px;
+    resize: both;
+
+}
+
+.send-btn {
+    background-color: #007bff;
+    border-radius: 10%;
+    border: 5px solid black;
+    padding: 10px 20px;
+    color: black;
+    border: none;
+    cursor: pointer;
+}
+
+.send-btn:hover {
+    background-color: #0056b3;
+}
+/* top gbt msg */
+
+#speech-bubble-ai {  
+    background-color: #007bff;
+    color: black;
+    padding: 10px;
+    border-radius: 10px;
+    border: 5px solid #11181F;
+    text-align: center;
+}
+
+#output-container {
+    display: none;
+}
+
+#output-img-container {
+    margin-bottom: 10px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.loading {
+    width: 50px;
+    height: 50px;
+}
+#conversation-container {
+    max-height: 100000000000000000000000px; 
+    padding: 0px; /* Add some padding to the container */
+}
+
+.message {
+    border-radius: 10px; 
+    padding: 0%;
+    margin: 0%;
+    margin-bottom: 10px; 
+    max-width: 100%;  
+}
+
+
+.user-message {
+    background-color: #11181F; 
+    color:  #007bff; 
+    color: #fff;
+    border: 5px solid  #007bff;
+    text-align: right; /* Align user messages to the right */
+    border-radius: 15px; /* style */
+    padding: 10px;  /* style */
+    width: fit-content;  /* style */
+    align-self: flex-end;  /* style */
+    margin-right: 0px; /* Adjust this value as needed */
+   
+}
+
+.bot-message {
+    background-color: #007bff; /* Set background color for bot messages */
+    color: #000; /* Set text color for bot messages */
+    color: #fff;
+    border: 5px solid #11181F;
+    text-align: left; /* Align bot messages to the left */
+    border-radius: 15px;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: fit-content;
+    align-self: flex-start;
+    margin-left: 0px; /* Adjust this value as needed */
+
+}
+
+/* ---------- Add styles for the message bubbles ----------*/
+
+.message-container {
+    display: flex;
+    flex-direction: column-reverse; /* Reverse the order of messages to have the latest at the bottom */
+    padding: 0px;
+    margin: 0px;
+    max-height: 300px;
+    overflow-y: auto;
+  }
+ 
+  /* Add animation for message appearance */
+  .message-appear {
+    animation: appear 0.5s ease-in-out;
+  }
+  
+  @keyframes appear {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+
+  
