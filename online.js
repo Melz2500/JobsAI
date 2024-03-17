@@ -1,11 +1,7 @@
-
 document.addEventListener('DOMContentLoaded', function () {
     const jobCardsContainer = document.getElementById('jobCardsContainer');
     const applicationId = '13343a75';
     const applicationKey = '9b30233edb751d90faee9e6ee349700b';
-
-   
-    
     const country = 'za';
   
   const apiUrl = `https://api.adzuna.com/v1/api/jobs/${country}/search/1?app_id=${applicationId}&app_key=${applicationKey}&results_per_page=100000000000&content-type=application/json`;
@@ -59,12 +55,10 @@ document.addEventListener('DOMContentLoaded', function () {
             return button;
         }
 
-
-
-  
-        buttons.appendChild(createButton('Ask for resume'));
-        buttons.appendChild(createButton('Get Advice'));
-        buttons.appendChild(createButton('Ask for Cover letter'));
+        buttons.appendChild(createButton('"Lets talk about it", Mr Dream Job AI'));
+        buttons.addEventListener('click', function() {
+            window.location.href = 'chat.html'; // Redirect to chat.html
+        });
         container.appendChild(title);
         container.appendChild(icons);
         //container.appendChild(description);
@@ -77,56 +71,47 @@ document.addEventListener('DOMContentLoaded', function () {
       container.appendChild(createHeading('h2', 'Description'));
       
     container.appendChild(createHeading('p', job.description)); 
+    
+    const Thankyou = document.createElement('p');
+    Thankyou.textContent = 'Note: Thank YOU for choosing US';
+    Thankyou.style.color = 'transparent'; 
+    Thankyou.style.fontSize = '1em'; // Adjusting font size to be similar to h1 element
+    Thankyou.style.textDecoration = 'underline'; // Adding underline text decoration
+    container.appendChild(Thankyou);
+
+    
     container.appendChild(redirectUrl);
+
+    const thankyou = document.createElement('p');
+    thankyou.textContent = 'Note: Thank YOU for choosing US';
+    thankyou.style.color = 'transparent'; 
+    thankyou.style.fontSize = '1em'; // Adjusting font size to be similar to h1 element
+    thankyou.style.textDecoration = 'underline'; // Adding underline text decoration
+    container.appendChild(thankyou);
+
+     // Adding a note between the button and redirect link
+     const note = document.createElement('p');
+     note.textContent = 'NOTE: Copy job details yourself !! then take it to Mr Dream Job AI ...paste it EVERYTIME !! you send a message';
+     
+     note.style.color = 'red'; // Setting the color to red
+     note.style.fontFamily = 'italic, sans-serif,times new roman'; // Setting the font family
+     note.style.fontSize = '14px'; // Setting the font size
+     note.style.fontSize = '1em'; 
+     note.style.fontWeight = 'bold';
+     note.style.textDecoration = 'cursive'; // Adding underline text decoration
+     container.appendChild(note);
+ 
     
 
       container.appendChild(buttons);
         card.appendChild(container);
   
         jobCardsContainer.appendChild(card);
-    }
-    /* added */
-    function redirectToResume() {
-        window.location.href = 'jobs.html';
-    }
-
-    function redirectToAdvice() {
-        window.location.href = 'jobs.html';
-    }
-
-    function redirectToCoverLetter() {
-        window.location.href = 'jobs.html';
-    }
-
-    function handleButtonClick(event) {
-        const button = event.target;
-        const buttonText = button.textContent;
-
-        switch (buttonText) {
-            case 'Ask for resume':
-                redirectToResume();
-                break;
-            case 'Get Advice':
-                redirectToAdvice();
-                break;
-            case 'Ask for Cover letter':
-                redirectToCoverLetter();
-                break;
-            default:
-                // Handle other button clicks if needed
-                break;
-        }
-    }
-
-    jobCardsContainer.addEventListener('click', function (event) {
-        const isButton = event.target.nodeName === 'BUTTON';
-        if (isButton) {
-            handleButtonClick(event);
-        }
-    });
+    } 
+    
+    
   
-    /* end here*/
-
+    
    function performSearch(query) {
         // Function to perform search
         const searchUrl = `${apiUrl}&what=${query}`;
@@ -189,6 +174,8 @@ document.addEventListener('DOMContentLoaded', function () {
             console.error('Error:', error.message);
         });
         });
+
+
 
         // toggle button
   
