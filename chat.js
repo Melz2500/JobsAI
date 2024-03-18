@@ -2,7 +2,7 @@
 const setupTextarea = document.getElementById('setup-textarea');
 const chatGptResponse = document.getElementById('chatgpt-response');
 const conversationContainer = document.getElementById('conversation-container'); // Add this line
-const apiKey = "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";
+const apiKey = "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";
 const url = "https://api.openai.com/v1/completions";
 
 document.getElementById("send-btn").addEventListener("click", function() {
