@@ -36,12 +36,6 @@
         <priority>0.8</priority>
     </url>
 
-    <!-- GoDaddy Domain Redirect -->
-    <url>
-        <loc>https://mrdreamjobai.online/</loc>
-        <lastmod>2024-03-22T20:55:02+00:00</lastmod> <!-- Use the same last modified date as the homepage -->
-        <changefreq>weekly</changefreq> <!-- Frequency of change (optional) -->
-        <priority>1.0</priority> <!-- Priority (optional, 0.0 to 1.0) -->
-    </url>
+    
 
 </urlset>
